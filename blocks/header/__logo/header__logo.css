@@ -1,19 +1,13 @@
 .header__logo {
   width: 142px;
   height: 33px;
-  display: block;
-  background-size: 100%;
-  background-position: left top;
-  background-repeat: no-repeat;
-  background-image: url('../../../images/logo.svg');
-}
-.header__logo:hover {
-  opacity: 0.8;
+  object-fit: contain;
 }
 
-@media (max-width: 450px) {
+@media screen and (max-width: 480px) {
   .header__logo {
-    width: 103px;
+    width: 104px;
     height: 24px;
+    margin: 0 0 0 7px;
   }
 }
