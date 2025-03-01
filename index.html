@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Страница">
   <meta name="keywords" content="HTML5, CSS">
-  <meta name="author" content="anna">
+  <meta name="author" content="ivan">
   <link rel="stylesheet" href="./pages/index.css">
   <title>Проект 4: Место</title>
 </head>
@@ -95,7 +95,6 @@
     </footer>
 
   </div>  
-
   <article class="popup">
     <div class="popup__container">
       <button class="popup__close" type="button" aria-label="Закрыть"></button>
@@ -108,5 +107,20 @@
     </div>
   </article>
 
+  <script src="./scripts/cards.js" type="module" defer></script>
+  <script src="./scripts/index.js" type="module" defer></script>
+
+
+  <template id="card-template">
+    <li class="places__item card">
+      <img class="card__image" src="" alt="" />
+      <button type="button" class="card__delete-button"></button>
+      <div class="card__description">
+        <h2 class="card__title">
+        </h2>
+        <button type="button" class="card__like-button"></button>
+      </div>
+    </li>
+  </template>
 </body>
 </html>
