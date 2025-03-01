@@ -11,7 +11,7 @@ https://github.com/Fren4okolate/mesto-project-ff/
 
 ### Скриншот
 
-![](Снимок.png)
+![](Снимок.PNG)
 
 ### Макет
 
