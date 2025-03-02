@@ -23,8 +23,8 @@ function createCard(item, deleteCard) {
 }
 
 // @todo: Функция удаления карточки
-function deleteCard(evt) {
-  evt.remove();
+function deleteCard(cardElement) {
+  cardElement.remove();
 }
 
 // @todo: Выводим массив карточек
