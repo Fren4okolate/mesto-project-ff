@@ -1,26 +1,33 @@
-const initialCards = [
+import kapaddokiaImage from '../images/kapaddokia.jpg';
+import FujiImage from '../images/Fuji.jpg';
+import PetraJordan from '../images/Petra-Jordan.jpg';
+import TajMahalImage from '../images/Taj-Mahal.jpg';
+import VengerparlamentImage from '../images/Venger-parlament.jpg';
+import YosemiteValleyImage from '../images/Yosemite-Valley.jpg';
+
+export default [
     {
-      name: "Архыз",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+      name: "Каппадокия",
+      link: kapaddokiaImage,
     },
     {
-      name: "Челябинская область",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+      name: "Фудзияма",
+      link: FujiImage
     },
     {
-      name: "Иваново",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+      name: "Петра",
+      link: PetraJordan
     },
     {
-      name: "Камчатка",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+      name: "Тадж-Махал",
+      link: TajMahalImage
     },
     {
-      name: "Холмогорский район",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+      name: "Венгерский парламент",
+      link: VengerparlamentImage
     },
     {
-      name: "Байкал",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-    }
+      name: "Парк Йосемити",
+      link: YosemiteValleyImage
+    },
 ];

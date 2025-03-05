@@ -1,31 +1,32 @@
-// @todo: Функция создания карточки
-function createCard(item, { deleteCard, cardTemplate, openPopupImageModal }) {
-  const newCardElement = cardTemplate.querySelector(".card").cloneNode(true);
-  const cardImage = newCardElement.querySelector(".card__image");
-  const cardTitle = newCardElement.querySelector(".card__title");
-  const deleteCardButton = newCardElement.querySelector(".card__delete-button");
-  const cardLikeButton = newCardElement.querySelector(".card__like-button");
+// Функция создания карточки
+export function createCard(data, onDelete, onLike, onImageClick) {
+    const cardTemplate = document.querySelector('#card-template').content;
+    const cardElement = cardTemplate.querySelector('.places__item').cloneNode(true);
 
-  cardImage.src = item.link;
-  cardImage.alt = "Изображение " + item.name;
-  cardTitle.textContent = item.name;
+    const cardImage = cardElement.querySelector('.card__image');
+    const cardTitle = cardElement.querySelector('.card__title');
 
-  cardImage.addEventListener("click", () =>
-    openPopupImageModal(item.link, item.name)
-  );
-  deleteCardButton.addEventListener("click", () => deleteCard(newCardElement));
-  cardLikeButton.addEventListener("click", likeCard);
+    cardImage.src = data.link;
+    cardImage.alt = data.name;
+    cardTitle.textContent = data.name;
 
-  return newCardElement;
+    const deleteButton = cardElement.querySelector('.card__delete-button');
+    deleteButton.addEventListener('click', () => onDelete(cardElement));
+
+    const likeButton = cardElement.querySelector('.card__like-button');
+    likeButton.addEventListener('click', () => onLike(likeButton));
+
+    cardImage.addEventListener('click', () => onImageClick(data));
+
+    return cardElement;
 }
 
-// @todo: Функция удаления карточки
-function deleteCard(card) {
-  card.remove();
+// Функция удаления карточки
+export function deleteCard(cardElement) {
+    cardElement.remove();
 }
 
-function likeCard(evt) {
-  evt.target.classList.toggle("card__like-button_is-active");
+// Функция лайка карточки
+export function cardLike(likeButton) {
+    likeButton.classList.toggle('card__like-button_is-active');
 }
-
-export { createCard, deleteCard };
