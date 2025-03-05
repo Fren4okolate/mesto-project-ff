@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivanmalyshevv/mesto-project-ff.git"
+    "url": "git+https://github.com/fren4okolate/mesto-project-ff.git"
   },
-  "author": "Ivan Malyshev",
+  "author": "Ivan Nedbay",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ivanmalyshevv/mesto-project-ff/issues"
+    "url": "https://github.com/fren4okolate/mesto-project-ff/issues"
   },
-  "homepage": "https://github.com/ivanmalyshevv/mesto-project-ff#readme",
+  "homepage": "https://github.com/fren4okolate/mesto-project-ff#readme",
   "dependencies": {
     "core-js": "^3.40.0"
   },
