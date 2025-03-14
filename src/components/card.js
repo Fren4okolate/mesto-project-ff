@@ -26,12 +26,6 @@ export function createCard(cardData, handleDeleteCard, cardLike, openImagePopup,
     deleteButton.addEventListener('click', () => handleDeleteCard(cardData._id, cardElement));
     likeButton.addEventListener('click', () => {
         cardLike(cardData._id, likeButton, likesCount)
-            .then(updatedCard => {
-                likesCount.textContent = updatedCard.likes.length;
-                likeButton.classList.toggle('card__like-button_is-active'), 
-                    updatedCard.likes.some(user => user._id === userId)
-            })
-            .catch(console.error);
     });
     cardImage.addEventListener('click', () => openImagePopup(cardData));
 

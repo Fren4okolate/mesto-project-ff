@@ -20,16 +20,20 @@ function showInputError(inputElement, errorMessage, formElement, validConfig) {
   
   // Функция для проверки валидности поля
   function checkInputValidity(inputElement, formElement, validConfig) {
-    if (inputElement.validity.patternMismatch) {
-      inputElement.setCustomValidity(inputElement.dataset.errorMessage);
+    // Проверка на наличие цифр
+    const hasNumbers = /\d/.test(inputElement.value);
+    if (hasNumbers) {
+        inputElement.setCustomValidity("Поле не должно содержать цифры.");
+    } else if (inputElement.validity.patternMismatch) {
+        inputElement.setCustomValidity(inputElement.dataset.errorMessage);
     } else {
-      inputElement.setCustomValidity("");
+        inputElement.setCustomValidity("");
     }
-  
+
     if (!inputElement.validity.valid) {
-      showInputError(inputElement, inputElement.validationMessage, formElement, validConfig);
+        showInputError(inputElement, inputElement.validationMessage, formElement, validConfig);
     } else {
-      hideInputError(inputElement, formElement, validConfig);
+        hideInputError(inputElement, formElement, validConfig);
     }
   }
   // Функция для проверки наличия невалидных полей
