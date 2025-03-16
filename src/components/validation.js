@@ -20,8 +20,10 @@ function showInputError(inputElement, errorMessage, formElement, validConfig) {
   
   // Функция для проверки валидности поля
   function checkInputValidity(inputElement, formElement, validConfig) {
-    // Проверка на наличие цифр
-    const hasNumbers = /\d/.test(inputElement.value);
+    // Проверка на наличие цифр только для текстовых инпутов
+    const isTextInput = inputElement.type === 'text';
+    const hasNumbers = isTextInput && /\d/.test(inputElement.value);
+    
     if (hasNumbers) {
         inputElement.setCustomValidity("Поле не должно содержать цифры.");
     } else if (inputElement.validity.patternMismatch) {
@@ -35,7 +37,8 @@ function showInputError(inputElement, errorMessage, formElement, validConfig) {
     } else {
         hideInputError(inputElement, formElement, validConfig);
     }
-  }
+}
+  
   // Функция для проверки наличия невалидных полей
   function hasInvalidInput(inputList) {
     return inputList.some((inputElement) => !inputElement.validity.valid);
